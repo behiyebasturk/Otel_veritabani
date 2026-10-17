@@ -95,19 +95,7 @@ En az 20 oda, 50 misafir ve 200 rezervasyon. Sezon fiyatları 2026-2028 için ta
 - **Resepsiyon ekranı:** günlük giriş/çıkış listesi, check-in/check-out, ek hizmet ve ödeme.
 - **Yönetici ekranı:** oda, oda tipi, sezon fiyatı, ek hizmet ve personel CRUD işlemleri, aylık rapor.
 
-## Görev Dağılımı
 
-| Görev | Sorumlu | Hedef Tarih |
-|---|---|---|
-| ER diyagramı taslağı (`docs/er-diagram.md`) | [...] | [...] |
-| Tabloların yazılması (`otel_db.sql`) | [...] | [...] |
-| Trigger'lar ve çakışma kontrol prosedürü | [...] | [...] |
-| Diğer prosedürler, view'lar, transaction | [...] | [...] |
-| Örnek veri | [...] | [...] |
-| Test senaryoları ve indeks karşılaştırması | [...] | [...] |
-| Arka uç API | [...] | [...] |
-| Ön yüz | [...] | [...] |
-| Rapor, Postman koleksiyonu, tanıtım videosu | [...] | [...] |
 
 ## Durum
 
