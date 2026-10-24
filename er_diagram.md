@@ -67,17 +67,6 @@ erDiagram
         int adet
         datetime tarih
     }
-```
-
-     ODA_TIPI ||--o{ ODA : "sahiptir"
-     ODA_TIPI  ||--o{ SEZON_FIYATI : "fiyatlandirilir"
-     ODA     ||--o{ REZERVASYON : "ayrilir"
-     ODA      ||--o{ TEMIZLIK_KAYDI: "temizlenir"
-     PERSONEL ||--o{ KULLANICI: "hesap"
-     PERSONEL ||--o{ KULLANICI: "isleme_alir"
-     PERSONEL ||--o{ TEMIZLIK_KAYDI: "temizler"
-     EK_HIZMET ||--o{ KONAKLAMA_HIZMETI: "satilir"
-
 
     ODA_TIPI {
         int oda_tipi_id PK
