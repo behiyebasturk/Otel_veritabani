@@ -1,16 +1,16 @@
 ```mermaid
 erDiagram
-    MISAFIR ||--o{ KULLANICI : "sahip olabilir"
+    MISAFIR |o--o| KULLANICI : "hesap"
     MISAFIR ||--o{ REZERVASYON : "yapar"
-    REZERVASYON ||--|| KONAKLAMA : "check_in"
+    REZERVASYON ||--o| KONAKLAMA : "check_in"
     KONAKLAMA ||--o{ ODEME : "odenir"
     KONAKLAMA ||--o{ KONAKLAMA_HIZMETI : "alir"
    ODA_TIPI ||--o{ ODA : "sahiptir"
      ODA_TIPI  ||--o{ SEZON_FIYATI : "fiyatlandirilir"
      ODA     ||--o{ REZERVASYON : "ayrilir"
      ODA      ||--o{ TEMIZLIK_KAYDI: "temizlenir"
-     PERSONEL ||--o{ KULLANICI: "hesap"
-     PERSONEL ||--o{ KULLANICI: "isleme_alir"
+     PERSONEL |o--o| KULLANICI: "hesap"
+     PERSONEL ||--o{ KONAKLAMA: "isleme_alir"
      PERSONEL ||--o{ TEMIZLIK_KAYDI: "temizler"
      EK_HIZMET ||--o{ KONAKLAMA_HIZMETI: "satilir"
 
@@ -26,11 +26,12 @@ erDiagram
 
     KULLANICI {
         int kullanici_id PK
-        varchar kullanici_adi
-        varchar eposta UK
+        varchar kullanici_adi UK
         varchar sifre_hash
         varchar rol
         int misafir_id FK
+        int personel_id FK
+
     }
 
     REZERVASYON {
@@ -46,7 +47,7 @@ erDiagram
 
     KONAKLAMA {
         int konaklama_id PK
-        int rezervasyon_id FK
+        int rezervasyon_id FK,UK
         int personel_id FK
         datetime gercek_giris_zamani
         datetime gercek_cikis_zamani
@@ -66,11 +67,12 @@ erDiagram
         int hizmet_id FK
         int adet
         datetime tarih
+        decimal uygulanan_fiyat
     }
 
     ODA_TIPI {
         int oda_tipi_id PK
-        varchar tip_adi
+        varchar tip_adi UK
         int kapasite
         varchar aciklama 
         decimal temel_fiyat
@@ -79,12 +81,12 @@ erDiagram
         int oda_id PK
         varchar oda_no UK
         int kat 
-        int tip_id FK
+        int oda_tipi_id FK
         varchar durum 
     }
     SEZON_FIYATI {
         int sezon_id PK
-        int tip_id FK
+        int oda_tipi_id FK
         date baslangic_tarihi
         date bitis_tarihi 
         decimal gecelik_fiyat
@@ -93,14 +95,14 @@ erDiagram
         int personel_id PK
         varchar ad 
         varchar soyad
-        varchar görev 
+        varchar gorev 
         date ise_giris_tarihi 
 
     }
     EK_HIZMET {
         int hizmet_id PK
         varchar hizmet_adi
-        decimal birim_fiyati 
+        decimal birim_fiyat 
     }
     TEMIZLIK_KAYDI {
         int temizlik_id PK
@@ -109,7 +111,7 @@ erDiagram
         date tarih 
         varchar durum 
     }
-    IslemLog{
+    ISLEM_LOG{
         int log_id PK
         varchar tablo_adi 
         varchar islem_turu 
@@ -118,4 +120,6 @@ erDiagram
         varchar yeni_deger
         datetime islem_tarihi 
     }
+```
+
    
