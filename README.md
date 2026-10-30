@@ -104,8 +104,8 @@ Son güncelleme: 16 Ekim 2026
 | Madde | Durum |
 |---|---|
 | README (proje planı) | Tamamlandı |
-| ER diyagramı ve normalizasyon notları | Başlanmadı |
-| `database/otel_db.sql` (tablolar) | Başlanmadı |
+| ER diyagramı ve normalizasyon notları | Tamamlandı |
+| `database/otel_db.sql` (tablolar) | Tamamlandı |
 | Trigger'lar | Başlanmadı |
 | Saklı prosedürler | Başlanmadı |
 | View'lar | Başlanmadı |
